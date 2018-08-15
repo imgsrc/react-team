@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import './index.css'
 
@@ -7,10 +8,10 @@ export default function ProjectList({ projects }) {
       <ul className="list project-list">
         { projects.map(project =>
             <li key={ project.id } className="list-item project-list-item">
-              <div className="list-item__text">
+              <Link to={ `/projects/${project.id}` } className="list-item__text">
                 <h3 className="list-item__primary-text">{ project.title }</h3>
                 <p className="list-item__secondary-text">{ project.description }</p>
-              </div>
+              </Link>
               <span className="label label-success">{ project.status }</span>
             </li>
         ) }

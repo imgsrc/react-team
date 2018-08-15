@@ -3,6 +3,7 @@ import classnames from 'classnames'
 
 export default function Button({
                                  element = 'button',
+                                 text,
                                  className,
                                  small,
                                  primary,
@@ -11,7 +12,8 @@ export default function Button({
                                  danger,
                                  warning,
                                  neutral,
-                                 children
+                                 children,
+                                 ...props
                                }) {
   return React.createElement(element, {
     className: classnames('btn', {
@@ -23,5 +25,6 @@ export default function Button({
       'btn-warning': warning,
       'btn-neutral': neutral
     }, className),
-  }, children);
+    ...props,
+  }, text || children);
 }

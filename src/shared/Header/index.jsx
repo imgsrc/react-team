@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 import Button from '../Button'
 
 export default function Header({ title }) {
@@ -6,7 +8,7 @@ export default function Header({ title }) {
       <header className="app-header">
         <span>{ title }</span>
 
-        <Button element="a" small>Новый проект</Button>
+        <Button element={ Link } to="/projects/create" small>Новый проект</Button>
       </header>
   );
 }
